@@ -1,0 +1,14 @@
+<div class="img">
+    <div class="background-layer">
+        <div class="md-center">
+            <h1 class="header"><i>Zomato</i></h1>
+            <h2 class="tag-line">Discover the best food & drinks</h2>
+            <input matInput (change)="changeCity()" class="search-city" placeholder="Enter City" [(ngModel)]="city">
+            <mat-select placeholder="Select Category" (selectionChange)="onCuisineSelection($event)" class="search-category">
+                <mat-option *ngFor="let category of cuisineCategory?.categories" [value]="category.cuisine.cuisine_id">
+                    {{category.cuisine.cuisine_name}}
+                </mat-option>
+            </mat-select>
+        </div>
+    </div>
+</div>

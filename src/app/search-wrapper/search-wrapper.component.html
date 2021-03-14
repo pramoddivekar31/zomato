@@ -1,0 +1,8 @@
+<app-search-restaurant
+    (selectCityName)="getAllCategoriesByCity($event)"
+    [cuisineCategory]="cuisineCategory"
+    (onCuisineCategoryChange)="onCuisineCategoryChange($event)"
+></app-search-restaurant>
+<app-restaurant-list    
+    [restaurantsList$]="restaurantsList$"
+></app-restaurant-list>

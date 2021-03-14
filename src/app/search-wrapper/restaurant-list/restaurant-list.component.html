@@ -1,0 +1,17 @@
+<ng-container *ngIf="(restaurantsList$ | async)?.length === 0; else restaurantTemplate">
+    <h2>Opps.. No Hotels Available Found For Selected Category</h2>
+</ng-container>
+<ng-template #restaurantTemplate>
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-around">
+        <div *ngFor="let restaurant of restaurantsList$ | async">
+            <mat-card class="mat-card">
+                <h2><i>{{restaurant.name}}</i></h2>
+                <h4><b>Address:</b> {{restaurant.address}}</h4>
+                <h4><b>Meal For Two In Just:</b> {{restaurant.averageCostForTwo | currency:"INR":"symbol"}}</h4>
+                <h4><b>Locality: </b>{{restaurant.locality}}</h4>
+                <h4><b>Latitude:</b> {{restaurant.latitude}}</h4>
+                <h4><b>Longitude: </b>{{restaurant.longitude}}</h4>
+            </mat-card>
+        </div>
+    </div>
+</ng-template>
